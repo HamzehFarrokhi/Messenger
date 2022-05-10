@@ -1,0 +1,101 @@
+.emojies {
+    position: relative;
+    cursor: pointer;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.emojies > i {
+    font-size: 1.4rem;
+}
+.emojies > .emoji-panel {
+    position: absolute;
+    bottom: 48px;
+    left: 0;
+    padding-bottom: 8px;
+    visibility: hidden;
+    transform: scale(0.7);
+    opacity: 0;
+    transition: transform 0.25s;
+}
+.emojies:hover.emojies > .emoji-panel {
+    visibility: visible;
+    transform: scale(1);
+    opacity: 1;
+}
+.emojies:hover.emojies > i {
+    color: var(--iconActive);
+    font-weight: 400;
+}
+.emoji-panel > .emoji-main {
+    width: 275px;
+    height: 270px;
+    border-radius: 15px;
+    background-color: var(--background);
+    box-shadow: var(--boxShadow);
+    padding: 0 0 0 10px;
+    overflow-y: auto;
+}
+.emoji-main > .emoji-category {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 12px 0;
+    margin-bottom: 5px;
+    background-color: var(--background);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.emoji-main > .back-emoji {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    padding: 8px 0;
+    background-color: var(--background);
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.emoji-category > i {
+    font-size: 1.2rem;
+}
+.emoji-main > p {
+    display: inline-block;
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+.emoji-main > p:hover {
+    background-color: var(--color4);
+}
+.emoji-main::-webkit-scrollbar {
+    width: 6px;
+}
+.emoji-main::-webkit-scrollbar-track {
+    background: transparent;
+}
+.emoji-main::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom,
+        transparent 26%,
+        var(--contactScroll) 26%,
+        var(--contactScroll) 74%,
+        transparent 74%
+    );
+    border-radius: 20px;
+}
+.emoji-main::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom,
+        transparent 26%,
+        var(--contactScrollHover) 26%,
+        var(--contactScrollHover) 74%,
+        transparent 74%
+    );
+}
+.emoji-main > div > div {
+    position: relative;
+    margin: 5px 0;
+}

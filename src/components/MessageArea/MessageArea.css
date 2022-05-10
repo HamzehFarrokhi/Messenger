@@ -1,0 +1,180 @@
+.message-area {
+    position: fixed;
+    top: 0;
+    left: 440px;
+    width: calc(100% - 440px);
+    height: 100%;
+}
+
+.message-area > .chat-area {
+    width: 100%;
+    height: calc(100% - 80px);
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    padding: 20px 150px 100px 150px;
+    overflow-y: scroll;
+    transition: background-image 0.5s;
+}
+.chat-area::-webkit-scrollbar {
+    width: 6px;
+}
+.chat-area::-webkit-scrollbar-track {
+    background: transparent;
+}
+.chat-area::-webkit-scrollbar-thumb {
+    background: var(--chatScroll);
+}
+.chat-area::-webkit-scrollbar-thumb:hover {
+    background: var(--chatScrollHover);
+}
+.chat-area > div > div {
+    position: relative;
+    margin: 5px 0;
+}
+.chat-area > div > div > .m-simple {
+    width: min(60%, 500px);
+    padding: 15px 20px;
+    padding-bottom: 20px;
+    animation: setOpacity 0.5s;
+    box-shadow: var(--boxShadow);
+}
+.payam * {
+    user-select: text !important;
+}
+@keyframes setOpacity {
+    0%   {opacity: 0;}
+    75% {opacity: 0;}
+    100%  {opacity: 1;}
+}
+.Me {
+    direction: rtl;
+}
+.send {
+    direction: rtl;
+}
+.send > .m-simple{
+    color: var(--sendColor);
+    background-color: var(--sendMessage);
+    border-radius: 15px 0 15px 15px;
+    direction: ltr;
+}
+.send::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    border-radius: 15px 0 15px 15px;
+    width: min(60%, 500px);
+    height: 100%;
+    background-color: var(--sendMessage);
+    animation: setWidth 0.5s;
+    opacity: 0;
+}
+.send > .m-info {
+    position: absolute;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    bottom: 0;
+    right: 5px;
+    width: 100px;
+}
+.send > .m-info > .time {
+    direction: ltr;
+    font-size: 0.7rem;
+    color: var(--sendColor);
+}
+.send > .m-info > .seen {
+    font-size: 0.7rem;
+    color: var(--sendColor);
+    margin-left: 5px;
+}
+.recieve > .m-simple {
+    color: var(--recieveColor);
+    background-color: var(--recieveMessage);
+    border-radius: 0 15px 15px 15px;
+    direction: ltr;
+}
+.recieve::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    border-radius: 0 15px 15px 15px;
+    width: min(60%, 500px);
+    height: 100%;
+    background-color: var(--recieveMessage);
+    animation: setWidth 0.5s;
+    opacity: 0;
+}
+.recieve > .m-info {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    bottom: 0;
+    left: calc(min(60%, 500px) - 105px);
+    width: 100px;
+}
+.recieve > .m-info > .time {
+    font-size: 0.8rem;
+    color: var(--color3);
+}
+.recieve > .m-info > .seen {
+    font-size: 0.8rem;
+    color: var(--recieveColor);
+    margin-left: 5px;
+}
+@keyframes setWidth {
+    from {width: 0;}
+    to {width: min(60%, 500px); opacity: 1;}
+}
+.chat-profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.chat-profile > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.chat-profile > .profile-name {
+    margin: 0 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color2);
+}
+
+@media only screen and (max-width:1500px) {
+    .message-area > .chat-area {
+        padding: 20px 20px 100px 20px;
+    }
+}
+@media only screen and (max-width:1000px) {
+    .message-area {
+        left: 360px;
+        width: calc(100% - 360px);
+    }
+}
+@media only screen and (max-width:780px) {
+    .message-area {
+        left: 300px;
+        width: calc(100% - 300px);
+    }
+    .message-area > .chat-area {
+        height: calc(100% - 60px);
+        padding: 20px 20px 80px 20px;
+    }
+}
+@media only screen and (max-width:600px) {
+    .chat-area::-webkit-scrollbar {
+        display: none;
+    }
+    .message-area {
+        left: 0;
+        width: 0;
+        overflow: hidden;
+    }
+}

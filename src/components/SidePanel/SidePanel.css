@@ -1,0 +1,41 @@
+.side-panel {
+    width: 60px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-right: 1px solid var(--border);
+    background-color: var(--sideBackground);
+    transition: background-color 0.5s;
+}
+.side-panel > div {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0;
+}
+.side-panel > div > i {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--icon);
+    margin: 15px;
+    cursor: pointer;
+}
+.side-panel > div > i:hover {
+    font-weight: 900;
+}
+.active-icon {
+    font-weight: 900;
+    color: var(--iconActive) !important;
+}
+
+@media only screen and (max-width:1000px) {
+    .side-panel > div {
+        margin: 30px 0;
+    }
+}
+@media only screen and (max-width:780px) {
+    .side-panel {
+        display: none;
+    }
+}
